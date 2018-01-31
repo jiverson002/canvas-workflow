@@ -1,3 +1,5 @@
+language: ruby
+
 # Enable caching the bundle between builds
 cache: bundler
 
