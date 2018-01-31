@@ -1,5 +1,8 @@
-*.gem
+# ruby files
 .bundle
-.sass-cache
-_site
 Gemfile.lock
+*.gem
+vendor
+
+# auto-generated html files
+_site

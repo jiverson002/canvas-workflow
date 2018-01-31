@@ -1,0 +1,19 @@
+# Enable caching the bundle between builds
+cache: bundler
+
+# branch whitelist
+branches:
+  only:
+    - master # test only the master branch
+
+# Assume bundler is being used, therefore the `install` step will run `bundle
+# install` by default.
+#
+# The order of the steps below is significant.
+script:
+  # initialize environment
+  - EXITCODE=0 ; (exit $EXITCODE)
+  # build site
+  - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+
+sudo: false

@@ -1,0 +1,36 @@
+safe: true
+strict_front_matter: true
+
+# Build settings
+highlighter: none
+
+# Render pages, even those marked unpublished
+unpublished: true
+
+# Use the Jekyll Canvas Yaml theme to produce correctly formatted yaml files for
+# the Canvas LMS API.
+theme: jekyll-canvas-yaml
+
+# Exclude from processing. Jekyll gives currently gives exclude precedence over
+# include, so list files not to be included here
+exclude:
+  - AUTHORS
+  - LICENSE
+  - files
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-canvas-yaml-*.gem
+  - jekyll-canvas-yaml.gemspec
+  - vendor/bundle/
+
+defaults:
+  -
+    scope:
+      path: "README.md"
+    values:
+      layout: syllabus
+  -
+    scope:
+      path: "pages"
+    values:
+      layout: page

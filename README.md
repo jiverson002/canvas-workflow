@@ -1,3 +1,6 @@
+---
+---
+
 # jekyll-canvas-yaml
 
 Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
@@ -12,7 +15,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyll-canvas-yaml"
+gem "jekyll-canvas-yaml", "=0.1.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
