@@ -1,0 +1,4 @@
+{%- capture newLine %}
+{% endcapture -%}
+{%- capture blockNewLine %}
+    {% endcapture -%}

@@ -1,0 +1,21 @@
+{%- include newline -%}
+
+assignment:
+  # id
+  id: {{ page.id }}
+
+  # assignment[name]
+  name: |
+    {{ page.title }}
+
+  # assignment[description]
+  description: |
+    {{ content | replace: newLine, blockNewLine }}
+
+  # assignment[due_at]
+  due_at: |
+    {{ page.due_at }}
+
+  # assignment[notify_of_update]
+  notify_of_update: {{ page.notify_of_update }}
+
