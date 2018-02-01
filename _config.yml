@@ -10,17 +10,22 @@ unpublished: true
 # the Canvas LMS API.
 theme: jekyll-canvas-yaml
 
+# Use the Jekyll Canvas tags set of plugins to provide useful tags for the
+# Canvas LMS.
+plugins:
+  - jekyll-canvas-tags
+
 # Exclude from processing. Jekyll gives currently gives exclude precedence over
 # include, so list files not to be included here
 exclude:
-  - AUTHORS
-  - LICENSE
-  - files
+  - CHANGELOG.md
   - Gemfile
   - Gemfile.lock
+  - LICENSE
+  - files
   - jekyll-canvas-yaml-*.gem
   - jekyll-canvas-yaml.gemspec
-  - vendor/bundle/
+  - vendor
 
 defaults:
   -
