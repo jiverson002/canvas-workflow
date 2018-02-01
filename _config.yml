@@ -1,3 +1,4 @@
+safe: true
 strict_front_matter: true
 
 # Build settings
@@ -12,6 +13,8 @@ theme: jekyll-canvas-yaml
 
 # Use the Jekyll Canvas tags set of plugins to provide useful tags for the
 # Canvas LMS.
+whitelist:
+  - jekyll-canvas-tags
 plugins:
   - jekyll-canvas-tags
 
