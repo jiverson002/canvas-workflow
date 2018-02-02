@@ -3,29 +3,7 @@ canvas:
   prefix: "https://canvas.instructure.com"
   course: "1278337"
 
-# Environment settings
-safe: true
-strict_front_matter: true
-
-# Build settings
-highlighter: none
-
-# Render pages, even those marked unpublished
-unpublished: true
-
-# Use the Jekyll Canvas Yaml theme to produce correctly formatted yaml files for
-# the Canvas LMS API. (Commented out because this is the jekyll-canvas-yaml
-# theme)
-# theme: jekyll-canvas-yaml
-
-# Use the Jekyll Canvas tags set of plugins to provide useful tags for the
-# Canvas LMS.
-whitelist:
-  - jekyll-canvas-tags
-plugins:
-  - jekyll-canvas-tags
-
-# Exclude from processing. Jekyll gives currently gives exclude precedence over
+# Exclude from processing. Jekyll currently gives exclude precedence over
 # include, so list files not to be included here
 exclude:
   - CHANGELOG.md
@@ -33,11 +11,43 @@ exclude:
   - files
   - jekyll-canvas-yaml.gemspec
 
+################################################################################
+####################   DO NOT CHANGE ANYTHING BELOW HERE!   ####################
+################################################################################
+
+# Use the Jekyll Canvas Yaml theme to produce correctly formatted yaml files for
+# the Canvas LMS API. (Commented out because this is the jekyll-canvas-yaml
+# theme)
+# theme: jekyll-canvas-yaml
+
+# Disable any plugins that are not explicitly enable (whitelisted) below
+safe: true
+# Use the Jekyll Canvas tags set of plugins to provide useful tags for the
+# Canvas LMS.
+whitelist:
+  - jekyll-canvas-tags
+plugins:
+  - jekyll-canvas-tags
+
+# Render pages, even those marked unpublished
+unpublished: true
+
+# Disable syntax highlighting
+highlighter: none
+
+# Fail build if there is incorrect yaml front matter
+strict_front_matter: true
+
+# Set the default layouts for certain groups of files
 defaults:
   - scope:
       path: "README.md"
     values:
       layout: syllabus
+  - scope:
+      path: "assignments"
+    values:
+      layout: assignment
   - scope:
       path: "pages"
     values:
