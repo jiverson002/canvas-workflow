@@ -8,8 +8,9 @@ highlighter: none
 unpublished: true
 
 # Use the Jekyll Canvas Yaml theme to produce correctly formatted yaml files for
-# the Canvas LMS API.
-theme: jekyll-canvas-yaml
+# the Canvas LMS API. (Commented out because this is the jekyll-canvas-yaml
+# theme)
+# theme: jekyll-canvas-yaml
 
 # Use the Jekyll Canvas tags set of plugins to provide useful tags for the
 # Canvas LMS.
