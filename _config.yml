@@ -22,13 +22,10 @@ plugins:
 # include, so list files not to be included here
 exclude:
   - CHANGELOG.md
-  - Gemfile
-  - Gemfile.lock
   - LICENSE
   - files
   - jekyll-canvas-yaml-*.gem
   - jekyll-canvas-yaml.gemspec
-  - vendor
 
 defaults:
   -

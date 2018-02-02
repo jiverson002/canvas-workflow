@@ -1,8 +1,2 @@
 # ruby files
-.bundle
-Gemfile.lock
 *.gem
-vendor
-
-# auto-generated html files
-_site

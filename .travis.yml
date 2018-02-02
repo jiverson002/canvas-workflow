@@ -1,25 +1,26 @@
 language: ruby
 
-# Enable caching the bundle between builds
-cache: bundler
-
 # branch whitelist
 branches:
   only:
     - master # test only the master branch
 
-# Assume bundler is being used, therefore the `install` step will run `bundle
-# install` by default.
-#
+# Install the required Ruby Gems --- this location is preferred over Gemfile, so
+# that repo does not have an additional config file.
+install:
+  - gem install 'jekyll' -v '~>3.7'
+  - gem install 'jekyll-canvas-tags' -v '=0.1.0'
+  - gem install 'travis-canvas-utils' -v '=0.4.0'
+
 # The order of the steps below is significant.
 script:
   # initialize environment
   - EXITCODE=0 ; (exit $EXITCODE)
   # upload files to canvas
-  - test $EXITCODE -eq 0 && bundle exec canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
   # build site
-  - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
   # deploy site to canvas
-  - test $EXITCODE -eq 0 && bundle exec canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
 
 sudo: false
