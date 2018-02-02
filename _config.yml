@@ -1,3 +1,9 @@
+# Canvas settings
+canvas:
+  prefix: "https://canvas.instructure.com"
+  course: "1278337"
+
+# Environment settings
 safe: true
 strict_front_matter: true
 
@@ -25,17 +31,14 @@ exclude:
   - CHANGELOG.md
   - LICENSE
   - files
-  - jekyll-canvas-yaml-*.gem
   - jekyll-canvas-yaml.gemspec
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "README.md"
     values:
       layout: syllabus
-  -
-    scope:
+  - scope:
       path: "pages"
     values:
       layout: page
