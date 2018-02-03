@@ -3,8 +3,8 @@ canvas:
   prefix: "https://canvas.instructure.com"
   course: "1278337"
 
-# Exclude from processing. Jekyll currently gives exclude precedence over
-# include, so list files not to be included here
+# Exclude the following files from processing. Jekyll currently gives exclude
+# precedence over include, so list files not to be included here
 exclude:
   - CHANGELOG.md
   - LICENSE
@@ -16,11 +16,10 @@ exclude:
 ################################################################################
 
 # Use the Jekyll Canvas Yaml theme to produce correctly formatted yaml files for
-# the Canvas LMS API. (Commented out because this is the jekyll-canvas-yaml
-# theme)
-# theme: jekyll-canvas-yaml
+# the Canvas LMS API.
+theme: jekyll-canvas-yaml
 
-# Disable any plugins that are not explicitly enable (whitelisted) below
+# Disable any plugins that are not explicitly enabled (whitelisted) below
 safe: true
 # Use the Jekyll Canvas tags set of plugins to provide useful tags for the
 # Canvas LMS.
