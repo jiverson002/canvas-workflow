@@ -3,4 +3,4 @@
 source "https://rubygems.org"
 gemspec
 
-gem "canvas-workflow-travis", "=0.6.0"
+gem "canvas-workflow-travis", "= 0.7.0"
