@@ -1,7 +1,6 @@
 # coding: utf-8
 
-$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require "canvas-workflow-jekyll/version"
+require_relative "lib/canvas-workflow-jekyll/version"
 
 Gem::Specification.new do |spec|
   spec.name     = "canvas-workflow-jekyll"
@@ -19,6 +18,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "pandarus", "= 0.7.0"
 
   spec.add_development_dependency "bundler", "~> 1.12"
-  spec.add_development_dependency "rspec", '~> 3.7'
-  spec.add_development_dependency "webmock", '~> 3.3'
 end

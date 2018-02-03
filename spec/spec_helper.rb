@@ -3,8 +3,6 @@
 SPEC_DIR = __dir__
 TMP_DIR  = File.expand_path("../tmp", SPEC_DIR)
 
-$LOAD_PATH.unshift File.expand_path("../lib", SPEC_DIR)
-
 require "jekyll"
 require "canvas-workflow-jekyll"
 require "webmock/rspec"
