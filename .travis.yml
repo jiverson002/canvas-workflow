@@ -1,12 +1,11 @@
+# Tell Travis the project language.
 language: ruby
 
-# branch whitelist
-branches:
-  only:
-    - master # test only the master branch
+# Route to the container-based infrastructure for a faster build.
+sudo: false
 
-# Install the required Ruby Gems --- this location is preferred over Gemfile, so
-# that repo does not have an additional config file.
+# Install the required Ruby Gems --- this location is preferred over a Gemfile,
+# so that repo does not require an additional config file.
 install:
   - gem install 'jekyll' -v '~>3.7'
   - gem install 'jekyll-canvas-tags' -v '=0.3.0'
@@ -23,5 +22,3 @@ script:
   - test $EXITCODE -eq 0 && jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
   # deploy site to canvas
   - test $EXITCODE -eq 0 && canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
-
-sudo: false

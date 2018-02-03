@@ -1,43 +1,45 @@
-# Canvas settings
+# Canvas settings.
 canvas:
   prefix: "https://canvas.instructure.com"
   course: "1278337"
 
-# Exclude the following files from processing. Jekyll currently gives exclude
-# precedence over include, so list files not to be included here
+# Exclude the following files/folders from processing. Jekyll currently gives
+# exclude precedence over include, so list files not to be included here.
 exclude:
   - CHANGELOG.md
   - LICENSE
   - files
-  - jekyll-canvas-yaml.gemspec
+  - jekyll-canvas-yaml.gemspec # you should remove this line
 
 ################################################################################
 ####################   DO NOT CHANGE ANYTHING BELOW HERE!   ####################
 ################################################################################
 
-# Use the Jekyll Canvas Yaml theme to produce correctly formatted yaml files for
-# the Canvas LMS API.
+# Use the Jekyll-Canvas-Yaml theme to produce correctly formatted yaml files for
+# use with the Canvas LMS API.
 theme: jekyll-canvas-yaml
 
-# Disable any plugins that are not explicitly enabled (whitelisted) below
+# Disable any plugins that are not explicitly enabled (whitelisted) below.
 safe: true
-# Use the Jekyll Canvas tags set of plugins to provide useful tags for the
+# Use the Jekyll-Canvas-Tags set of plugins to provide useful tags for the
 # Canvas LMS.
 whitelist:
   - jekyll-canvas-tags
 plugins:
   - jekyll-canvas-tags
 
-# Render pages, even those marked unpublished
+# Render pages, even those marked unpublished --- this allows a page to be
+# rendered and uploaded, but marked as not published on Canvas, if
+# [published: false] appears in the yaml front matter.
 unpublished: true
 
-# Disable syntax highlighting
+# Disable syntax highlighting.
 highlighter: none
 
-# Fail build if there is incorrect yaml front matter
+# Fail build if there is incorrect yaml front matter.
 strict_front_matter: true
 
-# Set the default layouts for certain groups of files
+# Set the default layouts for certain types of files.
 defaults:
   - scope:
       path: "README.md"
