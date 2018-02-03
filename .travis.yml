@@ -4,21 +4,18 @@ language: ruby
 # Route to the container-based infrastructure for a faster build.
 sudo: false
 
-# Install the required Ruby Gems --- this location is preferred over a Gemfile,
-# so that repo does not require an additional config file.
-install:
-  - gem install 'jekyll' -v '~>3.7'
-  - gem install 'jekyll-canvas-tags' -v '=0.3.0'
-  - gem install 'jekyll-canvas-yaml' -v '=0.1.0'
-  - gem install 'travis-canvas-utils' -v '=0.5.0'
+# Enable caching the bundle between builds.
+cache: bundler
 
 # The order of the steps below is significant.
 script:
   # initialize environment
   - EXITCODE=0 ; (exit $EXITCODE)
+  # run RSpec tests
+  - test $EXITCODE -eq 0 && bundle exec rspec ; EXITCODE=$? ; (exit $EXITCODE)
   # upload files to canvas
-  - test $EXITCODE -eq 0 && canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && bundle exec canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
   # build site
-  - test $EXITCODE -eq 0 && jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
   # deploy site to canvas
-  - test $EXITCODE -eq 0 && canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && bundle exec canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)

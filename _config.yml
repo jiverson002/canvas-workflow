@@ -9,24 +9,30 @@ exclude:
   - CHANGELOG.md
   - LICENSE
   - files
-  - jekyll-canvas-yaml.gemspec # you should remove this line
+  - lib                            # the following lines are not for deployment
+  - spec                           # ...
+  - Gemfile                        # ...
+  - Gemfile.lock                   # ...
+  - canvas-workflow-jekyll.gemspec # ...
+  - canvas-workflow-jekyll-*.gem   # ...
+  - vendor
 
 ################################################################################
 ####################   DO NOT CHANGE ANYTHING BELOW HERE!   ####################
 ################################################################################
 
-# Use the Jekyll-Canvas-Yaml theme to produce correctly formatted yaml files for
-# use with the Canvas LMS API.
-theme: jekyll-canvas-yaml
+# Use the canvas-workflow-jekyll theme to produce correctly formatted yaml files
+# for use with the canvas-workflow-travis gem.
+theme: canvas-workflow-jekyll
 
 # Disable any plugins that are not explicitly enabled (whitelisted) below.
 safe: true
-# Use the Jekyll-Canvas-Tags set of plugins to provide useful tags for the
-# Canvas LMS.
+# Allow the set of plugins included with the canvas-workflow-jekyll gem to
+# provide useful tags for the Canvas LMS.
 whitelist:
-  - jekyll-canvas-tags
+  - canvas-workflow-jekyll
 plugins:
-  - jekyll-canvas-tags
+  - canvas-workflow-jekyll
 
 # Render pages, even those marked unpublished --- this allows a page to be
 # rendered and uploaded, but marked as not published on Canvas, if
