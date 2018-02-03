@@ -7,6 +7,11 @@ sudo: false
 # Enable caching the bundle between builds.
 cache: bundler
 
+# Branch whitelist.
+branches:
+  only:
+    - master
+
 # The order of the steps below is significant.
 script:
   # initialize environment
