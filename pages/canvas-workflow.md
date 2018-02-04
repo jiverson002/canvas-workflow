@@ -2,40 +2,25 @@
 title: "Canvas Workflow"
 ---
 
-# Canvas Workflow
+## Quick-Start
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you
-need to be able to package up your theme into a gem. Put your layouts in
-`_layouts`, your includes in `_includes`, your sass files in `_sass` and any
-other assets in `assets`.
-
-To experiment with this code, add some sample content and run `bundle exec
-jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
+Create a folder with the following structure by downloading the appropriate
+files.  
 
 ```
 .
-├── .travis.yml
+├── [.travis.yml]
 ├── README.md
-├── _config.yml
+├── [_config.yml]
 ├── ...
 └── files
     └── ...
 ```
 
-Create a file called `_config.yml` with the following contents:
+In the file named `_config.yml`, replace the url in the line `prefix:
+"https://example.instructure.com"` with the url for your institution's Canvas
+site. Likewise, in the line `course: 12345`, `12345` should be replaced with
+your course id.  
 
-{% gist jiverson002/8d1737a9faa1b223883eb80ff8ac0464 %}
-
-replacing anything in <...> with your own information, and create a file called
-`.travis.yml` with the following contents:  
-
-{% gist jiverson002/d2b79ceb173c1cf2d94714dd68e7bbc1 %}
-
-## Usage
-
-TODO: Write usage instructions here. Describe your available layouts, includes,
-sass and/or assets.
+[.travis.yml]: {% file download/.travis.yml %}
+[_config.yml]: {% file download/\_config.yml %}
