@@ -23,4 +23,4 @@ site. Likewise, in the line `course: 12345`, `12345` should be replaced with
 your course id.  
 
 [.travis.yml]: {% file download/.travis.yml %}
-[_config.yml]: {% file download/\_config.yml %}
+[_config.yml]: {% file download/_config.yml %}
