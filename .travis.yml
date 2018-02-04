@@ -11,6 +11,7 @@ cache: bundler
 branches:
   only:
     - master
+    - doc
 
 # The order of the steps below is significant.
 script:
