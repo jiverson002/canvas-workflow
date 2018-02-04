@@ -1,12 +1,11 @@
 ---
 ---
 
-# canvas-workflow-jekyll
+# Canvas Workflow
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you
-need to be able to package up your theme into a gem. Put your layouts in
-`_layouts`, your includes in `_includes`, your sass files in `_sass` and any
-other assets in `assets`.
+Welcome to your new Canvas Workflow! In this directory, you'll find the files
+you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any
+other assets in `assets`.  
 
 To experiment with this code, add some sample content and run `bundle exec
 jekyll serve` – this directory is setup just like a Jekyll site!
@@ -40,15 +39,6 @@ Or install it yourself as:
 TODO: Write usage instructions here. Describe your available layouts, includes,
 sass and/or assets.
 
-```
-.
-├── .travis.yml
-├── README.md
-├── _config.yml
-└── files
-    └── ...
-```
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
@@ -70,7 +60,8 @@ changes in the browser after a refresh, just like normal.
 
 When your theme is released, only the files in `_layouts`, `_includes`, `_sass`
 and `assets` tracked with Git will be bundled. To add a custom directory to your
-theme-gem, please edit the regexp in `canvas-workflow-jekyll.gemspec` accordingly.
+theme-gem, please edit the regexp in `canvas-workflow-jekyll.gemspec`
+accordingly.
 
 ## License
 
