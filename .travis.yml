@@ -18,10 +18,10 @@ script:
   # initialize environment
   - EXITCODE=0 ; (exit $EXITCODE)
   # run RSpec tests
-  - test $EXITCODE -eq 0 && bundle exec rspec ; EXITCODE=$? ; (exit $EXITCODE)
+  #- test $EXITCODE -eq 0 && bundle exec rspec ; EXITCODE=$? ; (exit $EXITCODE)
   # upload files to canvas
-  - test $EXITCODE -eq 0 && bundle exec canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
+  #- test $EXITCODE -eq 0 && bundle exec canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
   # build site
-  - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+  #- test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
   # deploy site to canvas
-  - test $EXITCODE -eq 0 && bundle exec canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
+  #- test $EXITCODE -eq 0 && bundle exec canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
