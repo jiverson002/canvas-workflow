@@ -27,6 +27,7 @@ jobs:
       stage: build-and-deploy
       script: bundle exec jekyll build --verbose
       deploy:
+        skip_cleanup: true
         provider: script
         script: bundle exec canvas deploy
       if: branch = master
