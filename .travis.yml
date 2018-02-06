@@ -23,11 +23,10 @@ jobs:
       stage: push
       script: bundle exec canvas sync
       if: branch = master
-    - # build site
-      stage: build
+    - # build and deploy site
+      stage: build-and-deploy
       script: bundle exec jekyll build --verbose
-      if: branch = master
-    - # deploy site to canvas
-      stage: deploy
-      script: bundle exec canvas deploy
+      deploy:
+        provider: script
+        script: bundle exec canvas deploy
       if: branch = master
