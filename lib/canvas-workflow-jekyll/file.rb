@@ -1,8 +1,9 @@
-require 'pandarus'  # canvas lms api
+require 'pandarus' # canvas lms api
 
-# monkey-patch incorrect implementation
+# monkey-patch incomplete implementation
 module Pandarus
-  class Client
+  class V1
+    # incomplete: added additional parameter path
     def resolve_path_courses(course_id, path, opts={})
       query_param_keys = [
       ]
