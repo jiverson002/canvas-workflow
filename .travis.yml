@@ -12,31 +12,22 @@ branches:
   only:
     - master
 
-# Define stages.
+# The stages of testing, building, and deploying the Canvas Workflow site.
 jobs:
   include:
-    - <<: *.test
-    - <<: *.push
-    - <<: *.build-and-deploy
-
-# run RSpec tests
-&.test:
-  stage: test
-  script: bundle exec rspec
-  if: branch = master
-
-# push files to canvas
-&.push:
-  stage: push
-  script: bundle exec canvas sync
-  if: branch = master
-
-# build and deploy site
-&.build-and-deploy
-  stage: build-and-deploy
-  script:
-    # build site
-    - bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
-    # deploy site to Canvas
-    - test $EXITCODE -eq 0 && bundle exec canvas deploy
-  if: branch = master
+    - # run RSpec tests
+      stage: test
+      script: bundle exec rspec
+      if: branch = master
+    - # push files to canvas
+      stage: push
+      script: bundle exec canvas sync
+      if: branch = master
+    - # build and deploy site
+      stage: build-and-deploy
+      script: bundle exec jekyll build --verbose
+      deploy:
+        skip_cleanup: true
+        provider: script
+        script: bundle exec canvas deploy
+      if: branch = master
