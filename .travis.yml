@@ -12,15 +12,22 @@ branches:
   only:
     - master
 
-# The order of the steps below is significant.
-script:
-  # initialize environment
-  - EXITCODE=0 ; (exit $EXITCODE)
-  # run RSpec tests
-  - test $EXITCODE -eq 0 && bundle exec rspec ; EXITCODE=$? ; (exit $EXITCODE)
-  # upload files to canvas
-  - test $EXITCODE -eq 0 && bundle exec canvas sync ; EXITCODE=$? ; (exit $EXITCODE)
-  # build site
-  - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
-  # deploy site to canvas
-  - test $EXITCODE -eq 0 && bundle exec canvas deploy ; EXITCODE=$? ; (exit $EXITCODE)
+# The stages of testing, building, and deploying the Canvas Workflow site.
+jobs:
+  include:
+    - # run RSpec tests
+      stage: test
+      script: bundle exec rspec
+      if: branch = master
+    - # push files to canvas
+      stage: push
+      script: bundle exec canvas sync
+      if: branch = master
+    - # build site
+      stage: build
+      script: bundle exec jekyll build --verbose
+      if: branch = master
+    - # deploy site to canvas
+      stage: deploy
+      script: bundle exec canvas deploy
+      if: branch = master
