@@ -25,9 +25,9 @@ jobs:
       if: branch = master
     - # build and deploy site
       stage: build-and-deploy
-      script: bundle exec jekyll build --verbose
-      deploy:
-        skip_cleanup: true
-        provider: script
-        script: bundle exec canvas deploy
+      script:
+        # build site
+        - bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+        # deploy site to Canvas
+        - test $EXITCODE -eq 0 && bundle exec canvas deploy
       if: branch = master
