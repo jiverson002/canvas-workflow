@@ -8,15 +8,15 @@ sudo: false
 # so that repo does not require an additional config file.
 install:
   - gem install 'canvas-workflow-jekyll' -v '= 0.3.0'
-  - gem install 'canvas-workflow-travis' -v '= 0.7.0'
+  - gem install 'canvas-workflow-travis' -v '= 0.9.0'
 
 # The order of the steps below is significant.
 script:
   # initialize environment
   - EXITCODE=0 ; (exit $EXITCODE)
   # upload files to canvas
-  - test $EXITCODE -eq 0 && canvas-upload ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && canvas sync ; EXITCODE=$? ; (exit $EXITCODE)
   # build site
   - test $EXITCODE -eq 0 && jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
   # deploy site to canvas
-  - test $EXITCODE -eq 0 && canvas-deploy ; EXITCODE=$? ; (exit $EXITCODE)
+  - test $EXITCODE -eq 0 && canvas deploy ; EXITCODE=$? ; (exit $EXITCODE)
