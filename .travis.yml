@@ -12,7 +12,7 @@ branches:
   only:
     - master
 
-# The stages of testing, building, and deploying the Canvas Workflow gem.
+# The stages of testing, building, and deploying the Canvas Workflow gem/site.
 jobs:
   include:
     - # run RSpec tests (always run to detect the introduction of bugs)
@@ -24,10 +24,6 @@ jobs:
         api_key: $RUBYGEMS_API_KEY
         on:
           tags: true
-
-# The stages of testing, building, and deploying the Canvas Workflow site.
-jobs:
-  include:
     - # push files to canvas (FIXME only run when site changes)
       stage: push site files
       script: bundle exec canvas sync
