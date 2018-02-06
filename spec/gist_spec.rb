@@ -7,7 +7,7 @@ describe Canvas::Workflow::Jekyll::GistTag do
     doc.content = content
     doc.output  = Jekyll::Renderer.new(doc.site, doc).run
   end
-  let(:html) { "<p><iframe style=\"width: 750px; height: 400px;\" title=\"GitHub gist\" src=\"https://www.edu-apps.org/tools/github/github_summary_gist.html\##{gist}\" width=\"750\" height=\"400\" allowfullscreen=\"allowfullscreen\" webkitallowfullscreen=\"webkitallowfullscreen\" mozallowfullscreen=\"mozallowfullscreen\"></iframe></p>\n" }
+  let(:html) { "<p><iframe style=\"width: 100%; height: 400px;\" title=\"GitHub gist\" src=\"https://www.edu-apps.org/tools/github/github_summary_gist.html\##{gist}\" width=\"100%\" height=\"400\" allowfullscreen=\"allowfullscreen\" webkitallowfullscreen=\"webkitallowfullscreen\" mozallowfullscreen=\"mozallowfullscreen\"></iframe></p>\n" }
 
   context "valid gist" do
     let(:gist) { "jiverson002/a409d902fcea90800c9ea6c02c71d97d" }
