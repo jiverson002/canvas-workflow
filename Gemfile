@@ -11,5 +11,5 @@ group :test do
 end
 
 group :deploy do
-  gem "canvas-workflow-travis", "= 0.9.0"
+  gem "canvas-workflow-travis", "= 0.10.0"
 end

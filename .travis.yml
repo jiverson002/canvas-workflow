@@ -17,7 +17,8 @@ jobs:
   include:
     - # run RSpec tests (always run to detect the introduction of bugs)
       stage: test and [deploy] gem
-      script: bundle exec rspec
+      script:
+        - bundle exec rspec
       # deploy gem to rubygems.org (only run on tagged commits)
       deploy:
         provider: rubygems
@@ -26,13 +27,16 @@ jobs:
           tags: true
     - # push files to canvas (FIXME only run when site changes)
       stage: push site files
-      script: bundle exec canvas sync
+      script:
+        - bundle exec canvas push
       if: branch = master
     - # build and deploy site (FIXME only run when site changes)
       stage: build and deploy site
       script:
+        # prep site
+        - bundle exec canvas prep ; EXITCODE=$? ; (exit $EXITCODE)
         # build site
-        - bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
-        # deploy site to Canvas
+        - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+        # deploy site
         - test $EXITCODE -eq 0 && bundle exec canvas deploy
       if: branch = master
