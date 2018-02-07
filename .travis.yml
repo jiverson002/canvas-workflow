@@ -33,10 +33,8 @@ jobs:
     - # build and deploy site (FIXME only run when site changes)
       stage: build and deploy site
       script:
-        # prep site
-        - bundle exec canvas prep ; EXITCODE=$? ; (exit $EXITCODE)
         # build site
-        - test $EXITCODE -eq 0 && bundle exec jekyll build --verbose ; EXITCODE=$? ; (exit $EXITCODE)
+        - bundle exec canvas build --with-bundler ; EXITCODE=$? ; (exit $EXITCODE)
         # deploy site
         - test $EXITCODE -eq 0 && bundle exec canvas deploy
       if: branch = master
