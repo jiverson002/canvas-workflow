@@ -2,14 +2,14 @@
 
 assignment:
   # id
-  id: {{ page.id }}
+  id: {% assignment %}
 
   # assignment[name]
   name: |
     {{ page.title }}
 
   # assignment[description]
-  description: |
+  description: |-
     {{ content | replace: newLine, blockNewLine }}
 
   # assignment[due_at]
@@ -18,4 +18,3 @@ assignment:
 
   # assignment[notify_of_update]
   notify_of_update: {{ page.notify_of_update }}
-

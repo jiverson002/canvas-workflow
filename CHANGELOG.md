@@ -7,6 +7,8 @@
 * Refactored monkey-patch of resolve\_path\_courses in
   Canvas::Workflow::Jekyll::FileTag out of FileTag class into pandarus.rb.
 * Upgraded to canvas-workflow-travis v0.12.0.
+* Added the assignment tag, which is used internally to dynamically lookup   
+  assignment ids.
 
 ## [0.3.0](https://github.com/jiverson002/canvas-workflow-jekyll/releases/tag/0.3.0)
 * Renamed project to canvas-workflow-jekyll.

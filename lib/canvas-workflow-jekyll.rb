@@ -1,5 +1,6 @@
 require 'pandarus' # canvas lms api
 
+require 'canvas-workflow-jekyll/assignment'
 require 'canvas-workflow-jekyll/file'
 require 'canvas-workflow-jekyll/gist'
 require 'canvas-workflow-jekyll/icon'
