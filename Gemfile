@@ -11,5 +11,5 @@ group :test do
 end
 
 group :deploy do
-  gem "canvas-workflow-travis", :git => 'https://github.com/jiverson002/canvas-workflow-travis.git'
+  gem "canvas-workflow-travis", "~> 0.13.0"
 end
