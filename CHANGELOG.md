@@ -1,4 +1,4 @@
-## Unreleased
+## [0.4.0](https://github.com/jiverson002/canvas-workflow-jekyll/releases/tag/0.4.0)
 
 ### Enhancements
 * Moved 'development' dependencies to Gemfile and listed bundler as only
