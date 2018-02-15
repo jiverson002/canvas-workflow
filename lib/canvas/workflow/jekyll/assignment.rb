@@ -10,7 +10,7 @@ module Canvas
           config = context.registers[:site].config['canvas']
           title  = context.environments.first['page']['title']
           course = config['course']
-          client = Canvas::Client.new(config)
+          client = Canvas::Workflow::Client.new(config)
 
           assignments = client.list_assignments(course, :search_term => title).to_a
 

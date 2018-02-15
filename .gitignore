@@ -6,3 +6,8 @@
 vendor
 Gemfile.lock
 _site
+
+# yard files
+.yardoc
+.yardopts
+doc

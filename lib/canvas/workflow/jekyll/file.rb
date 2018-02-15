@@ -10,7 +10,7 @@ module Canvas
         def render(context)
           config  = context.registers[:site].config['canvas']
           course  = config['course']
-          client  = Canvas::Client.new(config)
+          client  = Canvas::Workflow::Client.new(config)
 
           dir     = File.dirname(@path)
           file    = File.basename(@path)

@@ -76,18 +76,18 @@ canvas:
 
 which, along with the previous example, would exclude anything contained within
 the folder `files/slides` and its sub-folders, except for the file
-`files/slides/intro.pdf`.     
+`files/slides/intro.pdf`.
 
 **Rationale** The precedence given to `include` over `exclude` is the result of
 the desire to keep source files --- those files used to generate material that
 is ultimately uploaded to the Canvas site --- in the same Git repository as the
 other Canvas site material. By allowing the exclusion of entire directories
 along with the option to selectively re-include certain files/folders, this is
-relatively convenient.  
+relatively convenient.
 
 **Advanced usage** It is possible to use [file globbing] when listing
 files/folders. The glob pattern must satisfy the requirements found
-[here][dir.glob].    
+[here][dir.glob].
 
 [.travis.yml]: {% file download/.travis.yml %}
 [_config.yml]: {% file download/_config.yml %}

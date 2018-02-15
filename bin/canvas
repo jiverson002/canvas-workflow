@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'canvas-workflow'
+
+Canvas::Workflow::CLI::Main.start

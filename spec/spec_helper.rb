@@ -3,8 +3,7 @@
 SPEC_DIR = __dir__
 TMP_DIR  = File.expand_path("../tmp", SPEC_DIR)
 
-require "jekyll"
-require "canvas-workflow-jekyll"
+require "canvas-workflow"
 require "webmock/rspec"
 
 RSpec.configure do |config|

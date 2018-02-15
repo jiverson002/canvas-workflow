@@ -1,0 +1,41 @@
+################################################################################
+################################################################################
+
+# Use the canvas-workflow theme to produce correctly formatted yaml files for
+# use with the canvas-workflow cli.
+theme: canvas-workflow
+
+# Disable any plugins that are not explicitly enabled (whitelisted) below.
+safe: true
+# Allow the set of plugins included with the canvas-workflow gem to provide
+# useful tags for the Canvas LMS.
+whitelist:
+  - canvas-workflow
+plugins:
+  - canvas-workflow
+
+# Render pages, even those marked unpublished --- this allows a page to be
+# rendered and uploaded, but marked as not published on Canvas, if
+# [published: false] appears in the yaml front matter.
+unpublished: true
+
+# Disable syntax highlighting.
+highlighter: none
+
+# Fail build if there is incorrect yaml front matter.
+strict_front_matter: true
+
+# Set the default layouts for certain types of files.
+defaults:
+  - scope:
+      path: "README.md"
+    values:
+      layout: syllabus
+  - scope:
+      path: "assignments"
+    values:
+      layout: assignment
+  - scope:
+      path: "pages"
+    values:
+      layout: page

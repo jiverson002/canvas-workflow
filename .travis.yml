@@ -25,8 +25,8 @@ jobs:
         api_key: $RUBYGEMS_API_KEY
         on:
           tags: true
-    - # push files to canvas (FIXME only run when site changes)
-      stage: push site files
+    - # push changes to canvas (FIXME only run when site changes)
+      stage: push site changes
       script:
         - bundle exec canvas push
       if: branch = master

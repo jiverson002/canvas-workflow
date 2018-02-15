@@ -1,4 +1,8 @@
-## [0.4.0](https://github.com/jiverson002/canvas-workflow-jekyll/releases/tag/0.4.0)
+## Unreleased
+* Renamed project to canvas-workflow.
+* Incorporated canvas-workflow-travis into this project.
+
+## [0.4.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.4.0)
 
 ### Enhancements
 * Moved 'development' dependencies to Gemfile and listed bundler as only
@@ -10,12 +14,12 @@
 * Added the assignment tag, which is used internally to dynamically lookup   
   assignment ids.
 
-## [0.3.0](https://github.com/jiverson002/canvas-workflow-jekyll/releases/tag/0.3.0)
+## [0.3.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.3.0)
 * Renamed project to canvas-workflow-jekyll.
 * Incorporated the former standalone gem jekyll-canvas-tags into this project.
 
 ## 0.2.0
 * Yanked.
 
-## [0.1.0](https://github.com/jiverson002/canvas-workflow-jekyll/releases/tag/0.1.0)
+## [0.1.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.1.0)
 * Initial release.

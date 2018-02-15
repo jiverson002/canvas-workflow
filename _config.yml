@@ -6,13 +6,14 @@ canvas:
 # Exclude the following files/folders from processing. Jekyll currently gives
 # exclude precedence over include, so list files not to be included here.
 exclude:
-  - CHANGELOG.md
-  - LICENSE
   - files
-  - lib                            # the following lines are not for production
-  - spec                           # ...
-  - Gemfile                        # ...
-  - Gemfile.lock                   # ...
-  - canvas-workflow-jekyll.gemspec # ...
-  - canvas-workflow-jekyll-*.gem   # ...
-  - vendor                         # ...
+  - doc
+  - lib
+  - spec
+  - vendor
+  - canvas-workflow.gemspec
+  - canvas-workflow-*.gem
+  - CHANGELOG.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE

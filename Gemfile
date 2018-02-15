@@ -9,7 +9,3 @@ group :test do
   gem "rspec", "~> 3.7"
   gem "webmock", "~> 3.3"
 end
-
-group :deploy do
-  gem "canvas-workflow-travis", "~> 0.13.0"
-end
