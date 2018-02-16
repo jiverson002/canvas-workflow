@@ -1,12 +1,2 @@
-# ruby files
-*.gem
-
-# bundler files
-.bundle
-vendor
-Gemfile.lock
+# jekyll files
 _site
-
-# yard files
-.yardoc
-doc
