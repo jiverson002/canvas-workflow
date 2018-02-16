@@ -1,5 +1,3 @@
-require 'rest-client' # multi-part send
-
 module Canvas
   module Workflow
     module CLI

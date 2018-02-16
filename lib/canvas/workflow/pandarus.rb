@@ -1,4 +1,5 @@
-require 'pandarus' # canvas lms api
+require 'pandarus'    # canvas lms api
+require 'rest-client' # multi-part send
 
 # monkey-patch incorrect/incomplete implementations
 module Pandarus
