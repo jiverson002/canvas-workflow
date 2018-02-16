@@ -12,29 +12,13 @@ branches:
   only:
     - master
 
-# The stages of testing, building, and deploying the Canvas Workflow gem/site.
-jobs:
-  include:
-    - # run RSpec tests (always run to detect the introduction of bugs)
-      stage: test and [deploy] gem
-      script:
-        - bundle exec rspec
-      # deploy gem to rubygems.org (only run on tagged commits)
-      deploy:
-        provider: rubygems
-        api_key: $RUBYGEMS_API_KEY
-        on:
-          tags: true
-    - # push changes to canvas (FIXME only run when site changes)
-      stage: push site changes
-      script:
-        - bundle exec canvas push
-      if: branch = master
-    - # build and deploy site (FIXME only run when site changes)
-      stage: build and deploy site
-      script:
-        # build site
-        - bundle exec canvas jekyll build --with-bundler
-        # deploy site
-        - bundle exec canvas deploy
-      if: branch = master
+# Run RSpec tests (always run to detect the introduction of bugs).
+script: bundle exec rspec
+
+# Deploy gem to rubygems.org (only run on tagged commits).
+deploy:
+  provider: rubygems
+  api_key: $RUBYGEMS_API_KEY
+  on:
+    tags: true
+    branch: master
