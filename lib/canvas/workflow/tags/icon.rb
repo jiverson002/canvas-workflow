@@ -1,6 +1,6 @@
 module Canvas
   module Workflow
-    module Jekyll
+    module Tags
       class IconTag < Liquid::Tag
         def initialize(tag_name, text, tokens)
           raise ArgumentError.new("Cannot have empty icon") if text.empty?
@@ -17,4 +17,4 @@ module Canvas
   end
 end
 
-Liquid::Template.register_tag('icon', Canvas::Workflow::Jekyll::IconTag)
+Liquid::Template.register_tag('icon', Canvas::Workflow::Tags::IconTag)

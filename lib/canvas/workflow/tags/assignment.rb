@@ -1,6 +1,6 @@
 module Canvas
   module Workflow
-    module Jekyll
+    module Tags
       class AssignmentTag < Liquid::Tag
         def initialize(tag_name, text, tokens)
           super
@@ -25,4 +25,4 @@ module Canvas
   end
 end
 
-Liquid::Template.register_tag('assignment', Canvas::Workflow::Jekyll::AssignmentTag)
+Liquid::Template.register_tag('assignment', Canvas::Workflow::Tags::AssignmentTag)

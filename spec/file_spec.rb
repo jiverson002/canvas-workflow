@@ -9,7 +9,7 @@ require "spec_helper"
 # [X]      for existing file in root folder [pass]
 # [X]      for existing file in nested folder [pass]
 
-describe Canvas::Workflow::Jekyll::FileTag do
+describe Canvas::Workflow::Tags::FileTag do
   let(:doc) { doc_with_content(content) }
   let(:prefix) { doc.site.config['canvas']['prefix'] }
   let(:course) { doc.site.config['canvas']['course'] }

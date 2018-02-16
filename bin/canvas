@@ -2,4 +2,4 @@
 
 require 'canvas-workflow'
 
-Canvas::Workflow::CLI::Main.start
+Canvas::Workflow::CLI.start(ARGV)

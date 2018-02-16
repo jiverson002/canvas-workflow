@@ -3,8 +3,9 @@ require 'rest-client' # multi-part send
 module Canvas
   module Workflow
     module CLI
-      class Pusher
-        def self.push
+      class Push < Thor
+        desc "push", "Push changes in Canvas Workflow project since last successful Travis build"
+        def push
           # upload files
           # FIXME This assumes a unix-like environment which uses backslash as
           #   file separator.
@@ -35,17 +36,22 @@ module Canvas
           end
         end
 
+        default_task :push
+
         private
 
-        def self.course
+        def course
           @course ||= Workflow.config['course']
         end
 
-        def self.push?(file)
+        def push?(file)
           !File.directory?(file) &&
             (!Workflow.excluded?(file) || Workflow.included?(file))
         end
       end
+
+      desc("push", "Push changes in Canvas Workflow project since last successful Travis build")
+      subcommand "push", Push
     end
   end
 end

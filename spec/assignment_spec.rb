@@ -5,7 +5,7 @@ require "spec_helper"
 # [X]      for non-existing assignment [error]
 # [X]      for existing assignment [pass]
 
-describe Canvas::Workflow::Jekyll::AssignmentTag do
+describe Canvas::Workflow::Tags::AssignmentTag do
   let(:doc) { doc_with_content(content) }
   let(:prefix) { doc.site.config['canvas']['prefix'] }
   let(:course) { doc.site.config['canvas']['course'] }

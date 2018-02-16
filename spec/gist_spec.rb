@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Canvas::Workflow::Jekyll::GistTag do
+describe Canvas::Workflow::Tags::GistTag do
   let(:doc) { doc_with_content(content) }
   let(:content) { "{% gist #{gist} %}" }
   let(:output) do

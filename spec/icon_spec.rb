@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Canvas::Workflow::Jekyll::IconTag do
+describe Canvas::Workflow::Tags::IconTag do
   let(:doc) { doc_with_content(content) }
   let(:content) { "{% icon #{icon} %}" }
   let(:output) do

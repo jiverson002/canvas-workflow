@@ -1,6 +1,6 @@
 module Canvas
   module Workflow
-    module Jekyll
+    module Tags
       class GistTag < Liquid::Tag
         def initialize(tag_name, text, tokens)
           raise ArgumentError.new("Cannot have empty gist") if text.empty?
@@ -17,4 +17,4 @@ module Canvas
   end
 end
 
-Liquid::Template.register_tag('gist', Canvas::Workflow::Jekyll::GistTag)
+Liquid::Template.register_tag('gist', Canvas::Workflow::Tags::GistTag)

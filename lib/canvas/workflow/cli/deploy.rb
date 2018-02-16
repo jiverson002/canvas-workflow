@@ -6,8 +6,9 @@ SafeYAML::OPTIONS[:default_mode] = :safe
 module Canvas
   module Workflow
     module CLI
-      class Deployer
-        def self.deploy
+      class Deploy < Thor
+        desc "deploy", "Deploy the Canvas Workflow project to a Canvas LMS"
+        def deploy
           # upload syllabus
           # FIXME this only compacts one level
           Dir.glob('README.md').select do |md_file|
@@ -58,16 +59,21 @@ module Canvas
           end
         end
 
+        default_task :deploy
+
         private
 
-        def self.course
+        def course
           @course ||= Workflow.config['course']
         end
 
-        def self.upload?(file)
+        def upload?(file)
           Travis.created?(file) || Travis.modified?(file)
         end
       end
+
+      desc "deploy", "Deploy a Canvas Workflow project to a Canvas LMS"
+      subcommand "deploy", Deploy
     end
   end
 end

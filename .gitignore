@@ -9,5 +9,4 @@ _site
 
 # yard files
 .yardoc
-.yardopts
 doc

@@ -1,6 +1,6 @@
 module Canvas
   module Workflow
-    module Jekyll
+    module Tags
       class FileTag < Liquid::Tag
         def initialize(tag_name, text, tokens)
           super
@@ -32,4 +32,4 @@ module Canvas
   end
 end
 
-Liquid::Template.register_tag('file', Canvas::Workflow::Jekyll::FileTag)
+Liquid::Template.register_tag('file', Canvas::Workflow::Tags::FileTag)
