@@ -2,4 +2,13 @@
 
 require 'canvas-workflow'
 
-Canvas::Workflow::CLI.start(ARGV)
+file = "/tmp/canvas-workflow"
+
+exit(false) if File.exist?(file)
+
+begin
+  Canvas::Workflow::CLI.start(ARGV)
+rescue Canvas::Workflow::CLI::Error => e
+  File.write(file, e.exitstatus.to_s)
+  exit(e.exitstatus)
+end

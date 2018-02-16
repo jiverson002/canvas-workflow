@@ -14,7 +14,8 @@ module Canvas
           cmd << "bundle exec " if options[:with_bundler]
           cmd << "jekyll build --config #{asset},_config.yml --verbose"
           #puts "#{cmd}"
-          exec("#{cmd}")
+          ret = system("#{cmd}")
+          raise Error.new($?.exitstatus) if (ret.nil? || ret == false)
         end
       end
 

@@ -20,6 +20,6 @@ jobs:
       stage: build and deploy site
       script:
         # build site
-        - canvas build ; EXITCODE=$? ; (exit $EXITCODE)
+        - canvas build
         # deploy site to Canvas
-        - test $EXITCODE -eq 0 && canvas deploy
+        - canvas deploy

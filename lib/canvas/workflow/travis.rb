@@ -33,7 +33,7 @@ module Canvas
           # get the list of files that have been deleted since the last passed
           # commit
           @removed ||= `git diff --diff-filter=D --name-only #{commit_sha}`
-          exit($?.exitstatus) if $?.exitstatus != 0
+          raise Error.new($?.exitstatus) if $?.exitstatus != 0
         end
 
         # check if the param file has been removed
@@ -58,7 +58,7 @@ module Canvas
           # commit
           @created ||= `git diff --diff-filter=AR --name-only #{commit_sha}`
         end
-        exit($?.exitstatus) if $?.exitstatus != 0
+        raise Error.new($?.exitstatus) if $?.exitstatus != 0
 
         # check if the param file has been created
         @created.include?(file)
@@ -82,7 +82,7 @@ module Canvas
           # passed commit
           @modified ||= `git diff --diff-filter=M --name-only #{commit_sha}`
         end
-        exit($?.exitstatus) if $?.exitstatus != 0
+        raise Error.new($?.exitstatus) if $?.exitstatus != 0
 
         # check if the param file has been modified
         @modified.include?(file)
