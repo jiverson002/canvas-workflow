@@ -6,6 +6,7 @@ canvas:
 # Exclude the following files/folders from processing. Jekyll currently gives
 # exclude precedence over include, so list files not to be included here.
 exclude:
+  - bin
   - files
   - doc
   - lib

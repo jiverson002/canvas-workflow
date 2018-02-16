@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll",      "~>3.7"
   spec.add_runtime_dependency "pandarus",    "=0.7.0"
   spec.add_runtime_dependency "rest-client", "~>2.0"
-  spec.add_runtime_dependency "safe_yaml",   "~>1.0"
   spec.add_runtime_dependency "thor",        "~>0.20"
   spec.add_runtime_dependency "travis",      "~>1.8"
 
