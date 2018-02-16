@@ -1,4 +1,4 @@
-## Unreleased
+## [0.5.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.5.0)
 * Renamed project to canvas-workflow.
 * Incorporated canvas-workflow-travis into this project.
 
