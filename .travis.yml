@@ -7,7 +7,7 @@ sudo: false
 # Install the required Ruby Gems --- this location is preferred over a Gemfile,
 # so that the repository does not require an additional config file.
 install:
-  - gem install canvas-workflow -v '~>0.6'
+  - gem install canvas-workflow -v '~>0.7'
 
 # The stages of building and deploying the Canvas Workflow site.
 script:
