@@ -89,7 +89,7 @@ relatively convenient.
 files/folders. The glob pattern must satisfy the requirements found
 [here][dir.glob].
 
-[.travis.yml]: {% file download/.travis.yml %}
-[_config.yml]: {% file download/_config.yml %}
+[.travis.yml]: https://raw.githubusercontent.com/jiverson002/canvas-workflow/site/.travis.yml
+[_config.yml]: https://raw.githubusercontent.com/jiverson002/canvas-workflow/site/_config.yml
 [file globbing]: https://en.wikipedia.org/wiki/Glob_%28programming%29
 [dir.glob]: https://ruby-doc.com/core/Dir.html#method-c-glob
