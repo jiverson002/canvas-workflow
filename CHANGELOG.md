@@ -1,3 +1,9 @@
+## Unreleased
+
+### Enhancements
+* Change subcommand jekyll build => build, to abstract what tool is being used
+  to build.
+  
 ## [0.5.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.5.0)
 * Renamed project to canvas-workflow.
 * Incorporated canvas-workflow-travis into this project.

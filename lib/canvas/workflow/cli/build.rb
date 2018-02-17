@@ -1,7 +1,7 @@
 module Canvas
   module Workflow
     module CLI
-      class Jekyll < Thor
+      class Build < Thor
         desc "build", "Build the Canvas Workflow project"
         option :with_bundler, :aliases => :b,
           :type => :boolean, :default => false,
@@ -18,11 +18,11 @@ module Canvas
         end
       end
 
-      desc "jekyll SUBCOMMAND ...ARGS", "Manage static site generator"
-      subcommand "jekyll", Jekyll
+      desc "build", "Manage static site generator"
+      subcommand "build", Build
     end
   end
 end
 
-# Canvas::Workflow::CLI.desc "jekyll SUBCOMMAND ...ARGS", "Manage static site generator"
-# Canvas::Workflow::CLI.subcommand "jekyll", Canvas::Workflow::CLI::Jekyll
+# Canvas::Workflow::CLI.desc "build", "Manage static site generator"
+# Canvas::Workflow::CLI.subcommand "build", Canvas::Workflow::CLI::Build
