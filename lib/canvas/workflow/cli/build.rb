@@ -16,6 +16,8 @@ module Canvas
           ret = system("#{cmd}")
           raise Error.new($?.exitstatus) if (ret.nil? || ret == false)
         end
+
+        default_task :build
       end
 
       desc "build", "Manage static site generator"

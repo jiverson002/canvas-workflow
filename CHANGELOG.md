@@ -1,8 +1,11 @@
-## [0.6.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.6.0)
+## [0.7.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.7.0)
 
 ### Enhancements
 * Change subcommand jekyll build => build, to abstract what tool is being used
   to build.
+
+## [0.6.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.6.0)
+* Yanked.
 
 ## [0.5.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.5.0)
 * Renamed project to canvas-workflow.
