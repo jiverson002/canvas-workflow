@@ -1,3 +1,8 @@
+## Unreleased
+
+### Enhancements
+* Added points_possible key to assignment yaml.
+
 ## [0.7.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.7.0)
 
 ### Enhancements
