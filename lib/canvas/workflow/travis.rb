@@ -1,4 +1,5 @@
-require 'travis' # travis-ci api
+require 'travis'     # travis-ci api
+require 'travis/pro' # travis-ci pro api
 
 module Canvas
   module Workflow
@@ -98,8 +99,14 @@ module Canvas
         return @commit_sha unless @commit_sha.nil?
 
         # get the builds for the travis repo
-        repo   = ENV['TRAVIS_REPO_SLUG']
-        travis = ::Travis::Repository.find(repo)
+        repo = ENV['TRAVIS_REPO_SLUG']
+
+        if ENV['TRAVIS_PRO_API_TOKEN'].nil?
+          travis = ::Travis::Repository.find(repo)
+        else
+          ::Travis::Pro.access_token = ENV['TRAVIS_PRO_API_TOKEN']
+          travis = ::Travis::Pro::Repository.find(repo)
+        end
 
         # search the builds for last succesful build
         builds = travis.each_build.select do |build|
