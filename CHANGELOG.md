@@ -1,7 +1,11 @@
 ## Unreleased
 
+## [0.8.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.8.0)
+
 ### Enhancements
 * Added points_possible key to assignment yaml.
+* Added use of TRAVIS\_PRO\_API\_TOKEN environment variable to trigger use of
+  travis-ci.com endpoint instead of travis-ci.org.
 
 ## [0.7.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.7.0)
 
