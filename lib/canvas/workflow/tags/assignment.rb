@@ -16,9 +16,9 @@ module Canvas
 
           raise ArgumentError.new("Assignment does not exist") if assignments.empty?
 
-          # return the first, which /should/ be the shortest length string, so
-          # first lexicographically
-          assignments.first[:id]
+          # return the first (according to order returned by pandarus)
+          # assignment with the correct name
+          assignments.select { |a| a[:name].strip == title }.first[:id]
         end
       end
     end
