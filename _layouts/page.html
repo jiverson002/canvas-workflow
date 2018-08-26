@@ -7,7 +7,7 @@ wiki_page:
 
   # wiki_page[body]
   body: |-
-    {{ content | replace: newLine, blockNewLine }}
+    {{ content | replace: newLine, blockNewLine | inline_color }}
 
   # wiki_page[editing_roles]
   editing_roles: {{ page.editing_roles }}

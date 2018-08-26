@@ -3,6 +3,7 @@ require 'safe_yaml' # yaml parser
 
 require 'canvas/workflow/cli'
 require 'canvas/workflow/client'
+require 'canvas/workflow/filters'
 require 'canvas/workflow/pandarus'
 require 'canvas/workflow/tags'
 require 'canvas/workflow/travis'
