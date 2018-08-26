@@ -7,7 +7,6 @@ module Canvas
         CSS = {
           vb: {
             c:   'color: #008000',            # Comment
-            err: 'border: 1px solid #FF0000', # Error
             k:   'color: #0000ff',            # Keyword
             ch:  'color: #008000',            # Comment.Hashbang
             cm:  'color: #008000',            # Comment.Multiline
@@ -53,10 +52,6 @@ module Canvas
           # convert class to inline color
           doc.search("div.language-#{lang} div.highlight span").each do |span|
             span['style'] = inline[span['class'].to_sym]
-          end
-          # remove extra whitespace in pre blocks
-          doc.search("div.language-#{lang} div.highlight pre").each do |pre|
-            pre.inner_html = pre.inner_html.gsub(/(\R)    /, '\1')
           end
 
           doc.inner_html
