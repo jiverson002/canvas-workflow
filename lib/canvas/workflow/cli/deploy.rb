@@ -68,7 +68,7 @@ module Canvas
         end
 
         def upload?(file)
-          Travis.created?(file) || Travis.modified?(file)
+          (!Workflow.excluded?(file) || Workflow.included?(file)) && (Travis.created?(file) || Travis.modified?(file))
         end
       end
 
