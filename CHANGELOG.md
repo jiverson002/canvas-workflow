@@ -1,5 +1,15 @@
 ## Unreleased
 
+### Enhancements
+* Added inline_color filter.
+* Allow markdown files to be excluded.
+* Made some keys optional in assignment layout.
+* Assignment tag now takes optional input to lookup arbitrary assignment
+  ids.
+
+### Bug fixes
+* Select first exact match title. #5
+
 ## [0.8.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.8.0)
 
 ### Enhancements
