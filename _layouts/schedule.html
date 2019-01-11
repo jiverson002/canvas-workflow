@@ -1,0 +1,81 @@
+{%- include newline -%}
+
+wiki_page:
+  # wiki_page[title]
+  title: |
+    {{ page.title }}
+
+  # wiki_page[body]
+  body: |-
+    <table>
+      <tbody>
+        <tr>
+          <td style="text-align: right"><i class="icon-ms-ppt"></i></td>
+          <td> slide deck</td>
+          <td style="width:20px"></td>
+          <td style="text-align: right"><i class="icon-edit"></i></td>
+          <td> homework due date</td>
+        </tr>
+        <tr>
+          <td><i class="icon-warning"></i></td>
+          <td> class exam</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table class="ic-Table ic-Table--condensed ic-Table--hover-row" style="margin-top:20px">
+      <!-- ignore: {% increment weekCtr %} -->
+      {%- assign timeStamp = site.canvas.start-date | date: "%s" -%}
+
+      {%- for week in page.weeks %}
+      <thead>
+        <tr class="ic-Table__row--bg-neutral">
+          {%- if weekCtr == 1 %}
+          <th style="width:100px">Week {% increment weekCtr -%}</th>
+          <th style="width:50px"></th>
+          <th style="width:50%">Topic</th>
+          <th>Reading</th>
+          {%- else %}
+          <th>Week {% increment weekCtr -%}</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          {%- endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {%- assign weekStart = 604800 | times: weekCtr | minus: 1209600 | plus:
+          timeStamp | date: "%d-%b" | upcase -%}
+
+        {%- assign isFirstMeeting = true -%}
+
+        {%- for meeting in week %}
+        <tr>
+          {%- if isFirstMeeting %}
+            {%- if meeting.date %}
+          <td>{{- meeting.date | date: "%d-%b" | upcase -}}</td>
+            {%- else %}
+          <td rowspan="0" style="vertical-align:top">{{- weekStart -}}</td>
+            {%- endif %}
+            {%- assign isFirstMeeting = false -%}
+          {%- endif %}
+          <td>{{- meeting.link | liquify | markdownify | rstrip | remove: "<p>" | remove: "</p>" -}}</td>
+          <td>{{- meeting.topic | liquify | markdownify | rstrip | remove: "<p>" | remove: "</p>" -}}</td>
+          <td>{{- meeting.reading | prepend: "" | liquify | markdownify | rstrip | remove: "<p>" | remove: "</p>" -}}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+      {% endfor %}
+    </table>
+
+  # wiki_page[editing_roles]
+  editing_roles: 
+
+  # wiki_page[notify_of_update]
+  notify_of_update: 
+
+  # wiki_page[published]
+  published: 
+
+  # wiki_page[front_page]
+  front_page: 
