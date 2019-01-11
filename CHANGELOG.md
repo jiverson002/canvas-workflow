@@ -8,7 +8,7 @@
   ids.
 
 ### Bug fixes
-* Select first exact match title. #5
+* Select first exact match title. [#5](https://github.com/jiverson002/canvas-workflow/issues/5)
 
 ## [0.8.0](https://github.com/jiverson002/canvas-workflow/releases/tag/0.8.0)
 
