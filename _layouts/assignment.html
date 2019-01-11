@@ -12,16 +12,24 @@ assignment:
   description: |-
     {{ content | replace: newLine, blockNewLine }}
 
+  {% if due_at %}
   # assignment[due_at]
   due_at: |
     {{ page.due_at }}
+  {% endif %}
 
+  {% if assignment_group_id %}
   # assignment[assignment_group_id]
   assignment_group_id: |
     {{ page.assignment_group_id }}
+  {% endif %}
 
+  {% if assignment[notify_of_update] %}
   # assignment[notify_of_update]
   notify_of_update: {{ page.notify_of_update }}
+  {% endif %}
 
+  {% if assignment[points_possible] %}
   # assignment[points_possible]
   points_possible: {{ page.points_possible }}
+  {% endif %}
