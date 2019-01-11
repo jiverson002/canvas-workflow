@@ -4,11 +4,16 @@ module Canvas
       class AssignmentTag < Liquid::Tag
         def initialize(tag_name, text, tokens)
           super
+          @title = text.strip
         end
 
         def render(context)
           config = context.registers[:site].config['canvas']
-          title  = context.environments.first['page']['title']
+          if @title.to_s.empty?
+            title = context.environments.first['page']['title']
+          else
+            title = @title
+          end
           course = config['course']
           client = Canvas::Workflow::Client.new(config)
 
