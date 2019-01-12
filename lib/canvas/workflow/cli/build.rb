@@ -6,12 +6,16 @@ module Canvas
         option :with_bundler, :aliases => :b,
           :type => :boolean, :default => false,
           :desc => "build using bundler?"
+        option :incremental, :aliases => :i,
+          :type => :boolean, :default => false,
+          :desc => "enable jekyll incremental builds?"
         def build
           config = File.expand_path("../../../../../_config.yml", __FILE__)
 
           cmd = ""
           cmd << "bundle exec " if options[:with_bundler]
           cmd << "jekyll build --config #{config},_config.yml --verbose"
+          cmd << " --incremental" if options[:incremental]
           #puts "#{cmd}"
           ret = system("#{cmd}")
           raise Error.new($?.exitstatus) if (ret.nil? || ret == false)

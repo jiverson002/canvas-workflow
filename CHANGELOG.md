@@ -1,6 +1,9 @@
 ## Unreleased
 
 ### Enhancements
+* Added --incremental option for incremental Jekyll builds.
+* Added schedule layout.
+* Added liquify filter.
 * Added inline_color filter.
 * Allow markdown files to be excluded.
 * Made some keys optional in assignment layout.
