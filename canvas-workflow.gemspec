@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://canvas.instructure.com/courses/1278337"
   spec.license  = "MIT"
 
-  spec.files       = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(_includes|_layouts|bin|lib|spec|_config.yml|.yardopts|CHANGELOG|Gemfile|LICENSE|README)}i) }
+  spec.files       = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(_includes|_layouts|_sass|assets|bin|lib|spec|_config.yml|.yardopts|CHANGELOG|Gemfile|LICENSE|README)}i) }
   spec.executables = spec.files.grep(/^bin/).map{ |f| File.basename(f) }
 
   spec.add_runtime_dependency 'jekyll',      '~>3.7'
