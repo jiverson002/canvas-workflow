@@ -15,12 +15,12 @@ Gem::Specification.new do |spec|
   spec.files       = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(_includes|_layouts|_sass|assets|bin|lib|spec|_config.yml|.yardopts|CHANGELOG|Gemfile|LICENSE|README)}i) }
   spec.executables = spec.files.grep(/^bin/).map{ |f| File.basename(f) }
 
-  spec.add_runtime_dependency 'jekyll',      '~>3.7'
-  spec.add_runtime_dependency 'nokogiri',    '~>1.8'
+  spec.add_runtime_dependency 'jekyll',      '~>4.0'
+  spec.add_runtime_dependency 'nokogiri',    '~>1.10'
   spec.add_runtime_dependency 'pandarus',    '=0.7.0'
-  spec.add_runtime_dependency 'rest-client', '~>2.0'
+  spec.add_runtime_dependency 'rest-client', '~>2.1'
   spec.add_runtime_dependency 'thor',        '~>0.20'
   spec.add_runtime_dependency 'travis',      '~>1.8'
 
-  spec.add_development_dependency 'bundler', '~>1.12'
+  spec.add_development_dependency 'bundler', '~>2.0'
 end
