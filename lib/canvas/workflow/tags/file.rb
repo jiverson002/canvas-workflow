@@ -21,7 +21,7 @@ module Canvas
           folder  = folders.last
           files   = client.list_files_folders(folder[:id], :search_term => file).to_a
 
-          raise ArgumentError.new("File does not exist") if files.empty?
+          raise ArgumentError.new("File '#{@path}' does not exist") if files.empty?
 
           # return the first, which /should/ be the shortest length string, so
           # first lexicographically

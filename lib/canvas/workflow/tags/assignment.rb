@@ -19,7 +19,7 @@ module Canvas
 
           assignments = client.list_assignments(course, :search_term => title).to_a
 
-          raise ArgumentError.new("Assignment does not exist") if assignments.empty?
+          raise ArgumentError.new("Assignment '#{title}' does not exist") if assignments.empty?
 
           # return the first (according to order returned by pandarus)
           # assignment with the correct name
