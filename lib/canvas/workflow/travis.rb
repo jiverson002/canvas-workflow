@@ -108,11 +108,17 @@ module Canvas
           travis = ::Travis::Pro::Repository.find(repo)
         end
 
-        # search the builds for last succesful build
+        # search the builds for last successful build
         builds = travis.each_build.select do |build|
-          build.branch_info.eql?(self.branch) && build.passed?
+          build.branch_info.eql?(self.branch) && build.passed? &&
+            valid?(build.commit.short_sha)
         end
         @commit_sha = builds.first.commit.short_sha unless builds.empty?
+      end
+
+      def self.valid?(commit_sha)
+        `git diff --diff-filter=D --name-only #{commit_sha}`
+        $?.exitstatus == 0
       end
     end
   end
